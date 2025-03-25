@@ -10,3 +10,99 @@
     height: 21px;
     width: 21px
 }
+
+.left-nav {
+  width: 200px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-right: 1px solid #ddd;
+}
+
+.left-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-nav li {
+  margin-bottom: 10px;
+}
+
+.left-nav a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.left-nav a:hover {
+  text-decoration: underline;
+}
+
+.left-nav {
+  position: fixed;
+  width: 200px;
+  background-color: #f8f9fa;
+  padding: 15px;
+  border-right: 1px solid #ddd;
+}
+
+.left-nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.left-nav li {
+  margin-bottom: 10px;
+}
+
+.left-nav a {
+  text-decoration: none;
+  color: #007bff;
+}
+
+.left-nav a:hover {
+  text-decoration: underline;
+}
+
+// New styles for expandable sections
+.left-nav .expandable > span {
+  display: block;
+  cursor: pointer;
+  position: relative;
+  padding-right: 20px;
+}
+
+.left-nav .expandable > span::after {
+  content: '\+';
+  position: absolute;
+  right: 0;
+}
+
+.left-nav .expandable.active > span::after {
+  content: '\-';
+}
+
+.left-nav .subnav {
+  display: none;
+  padding-left: 15px;
+}
+
+.left-nav .expandable.active .subnav {
+  display: block;
+}
+
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start; /* align sidebar and content at the top */
+}
+
+.sidebar {
+  flex: 0 0 200px; /* fixed sidebar width */
+  background-color: #f8f9fa;
+  border-right: 1px solid #ddd;
+  padding: 15px;
+}
+
+.page-content {
+  flex: 1;
+  padding: 15px;
+}

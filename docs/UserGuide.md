@@ -9,8 +9,7 @@ FinClient is a **desktop app for managing contacts, optimized for use via a Comm
 {:toc}
 
 --------------------------------------------------------------------------------------------------------------------
-
-## Quick start
+## Quick start {#quick-start}
 
 1. Ensure you have Java `17` or above installed in your Computer.<br>
    **Mac users:** Ensure you have the precise JDK version prescribed [here](https://se-education.org/guides/tutorials/javaInstallationMac.html).
@@ -39,8 +38,11 @@ FinClient is a **desktop app for managing contacts, optimized for use via a Comm
 1. Refer to the [Features](#features) below for details of each command.
 
 --------------------------------------------------------------------------------------------------------------------
-
-## Features
+--- 
+layout: page
+title: Introduction
+---
+## Features {#features}
 
 <div markdown="block" class="alert alert-info">
 
@@ -64,7 +66,7 @@ FinClient is a **desktop app for managing contacts, optimized for use via a Comm
 * If you are using a PDF version of this document, be careful when copying and pasting commands that span multiple lines as space characters surrounding line-breaks may be omitted when copied over to the application.
 </div>
 
-### Viewing help : `help`
+### Viewing help : `help` 
 
 Shows a message explaning how to access the help page.
 
@@ -221,21 +223,21 @@ _Details coming soon ..._
 
 --------------------------------------------------------------------------------------------------------------------
 
-## FAQ
+## FAQ {#faq}
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous FinClient home folder.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Known issues
+## Known issues {#known-issues}
 
 1. **When using multiple screens**, if you move the application to a secondary screen, and later switch to using only the primary screen, the GUI will open off-screen. The remedy is to delete the `preferences.json` file created by the application before running the application again.
 2. **If you minimize the Help Window** and then run the `help` command (or use the `Help` menu, or the keyboard shortcut `F1`) again, the original Help Window will remain minimized, and no new Help Window will appear. The remedy is to manually restore the minimized Help Window.
 
 --------------------------------------------------------------------------------------------------------------------
 
-## Command summary
+## Command summary {#command-summary}
 
  Action     | Format, Examples                                                                                                                                                                                 
 ------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
