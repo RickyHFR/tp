@@ -14,8 +14,16 @@ UniquePersonList -right-> Person
 
 Person -up-> "*" Tag
 
+PhoneList *--> Phone
+
 Person *--> Name
-Person *--> Phone
+Person *--> PhoneList
 Person *--> Email
 Person *--> Address
+Person *--> Remark
+Person *--> Order
+Person *--> Company
+Person *--> Job
+Person *--> StockPlatform
+Person *--> Networth
 @enduml
