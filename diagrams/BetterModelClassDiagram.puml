@@ -15,6 +15,7 @@ UniquePersonList -right-> Person
 Person -up-> "*" Tag
 
 PhoneList *--> Phone
+Remark *--> Timestamp
 
 Person *--> Name
 Person *--> PhoneList
@@ -26,4 +27,7 @@ Person *--> Company
 Person *--> Job
 Person *--> StockPlatform
 Person *--> Networth
+
+Remark o--> "*" LocalDateTime : <<has deadline>>
+
 @enduml
