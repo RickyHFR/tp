@@ -5,6 +5,15 @@ mark {
   padding-bottom: 0;
 }
 
+/*
+:target::before {
+  content: "";
+  display: block;
+  height: 60px;
+  margin: -60px 0 0;
+}
+*/
+
 .indented {
   padding-left: 20px;
 }
@@ -168,4 +177,20 @@ h4,
 h5,
 h6 {
   color: #e46c0a;
+}
+
+h1[id], h2[id], h3[id], h4[id], h5[id] {
+  scroll-margin-top: 60px;
+}
+
+img {
+  display: block;
+  margin: auto;
+  width: 75%;
+}
+
+.no-style {
+  display: inline;
+  margin: 0;
+  width: auto;
 }
