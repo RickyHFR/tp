@@ -15,12 +15,12 @@ FinClient is a Command-Line Interface (CLI) application, or simply put, a typing
 Specific features include:
 
 * 📇 Adding and deleting contacts
-* ✏️ Editing your contacts' details 
-* 🔍 Locating your contacts by tag\/name
-* 🏢 Maintaining contact-specific details such as jobs and their workplaces  
+* ✏️ Editing your contacts' details
+* 🔍 Locating your contacts by name
+* 🏢 Maintaining contact-specific details such as jobs and their workplaces
 * 📊 Sorting your contacts by name, networth, order prices and amounts
-* 🕵️‍♂️ Hiding and revealing contacts  
-* 📈 Estimating Call Auction clearing prices simultaneously 
+* 🕵️‍♂️ Hiding and revealing contacts
+* 📈 Estimating Call Auction clearing prices simultaneously
 
 You can look forward to an efficient and enjoyable experience with FinClient!
 
@@ -31,19 +31,22 @@ You can look forward to an efficient and enjoyable experience with FinClient!
   2. [Adding a person](#adding-a-person-add)
   3. [Listing all persons](#listing-all-persons-list)
   4. [Editing a person](#editing-a-person-edit)
-  5. [Locating persons by tag](#locating-persons-by-tag-find)
-  6. [Locating persons by name](#locating-persons-by-name-find)
-  7. [Deleting a person](#deleting-a-person-delete)
-  8. [Hiding a person](#hiding-a-person-hide)
-  9. [Revealing a person](#revealing-a-person-reveal)
-  10. [Limit orders and Call Auction calculator](#limit-orders-and-call-auction-calculator-order)
-  11. [Sorting contacts](#sorting-contacts-sort)
-  12. [Clearing all entries](#clearing-all-entries-clear)
-  13. [Exiting the program](#exiting-the-program-exit)
-  14. [Saving the data](#saving-the-data)
-  15. [Editing the data file](#editing-the-data-file)
+  5. [Locating persons by name](#locating-persons-by-name-find)
+  6. [Deleting a person](#deleting-a-person-delete)
+  7. [Hiding a person](#hiding-a-person-hide)
+  8. [Revealing a person](#revealing-a-person-reveal)
+  9. [Limit orders and Call Auction calculator](#limit-orders-and-call-auction-calculator-order)
+  10. [Sorting contacts](#sorting-contacts-sort)
+  11. [Clearing all entries](#clearing-all-entries-clear)
+  12. [Exiting the program](#exiting-the-program-exit)
+  13. [Saving the data](#saving-the-data)
+  14. [Editing the data file](#editing-the-data-file)
 - [Known issues](#known-issues)
 - [FAQ](#faq)
+  1. [General Usage](#general-usage)
+  2. [Commands and Features](#commands-and-features)
+  3. [Data Management](#data-management)
+  4. [Trouble Shooting](#trouble-shooting)
 - [Command summary](#command-summary)
 
 --------------------------------------------------------------------------------------------------------------------
@@ -66,8 +69,8 @@ You can look forward to an efficient and enjoyable experience with FinClient!
    1. On Windows: Press the Windows key, type cmd, and press Enter.
    2. On Mac: Open Terminal from the Applications > Utilities folder.
 
-5. In the command window, go to the folder where you saved the file. You do this by typing cd followed by the folder path. 
-   
+5. In the command window, go to the folder where you saved the file. You do this by typing cd followed by the folder path.
+
     For example:
    ```
    cd Downloads/FinClient
@@ -89,7 +92,7 @@ You can look forward to an efficient and enjoyable experience with FinClient!
 
    * `list` : List all contacts.
 
-   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Add a contact named `John Doe` to the Address Book.
+   * `add n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01` : Add a contact named `John Doe` to FinClient.
 
    * `delete 3` : Delete the 3rd contact shown in the current list.
 
@@ -116,7 +119,7 @@ Congratulations! You've successfully finished setting up FinClient 🎉. Explore
 * Items followed by `…` can be repeated any number of times (including not at all).<br>
   e.g. `[t/TAG]…` can be used as ` `(i.e. 0 times), `t/friend`, or `t/friend t/family` etc.
 
-* Arguments can be in any order (there is a special case for remark command, please refer [here](#adding-remarks)).<br>
+* Arguments can be in any order <br>
   e.g. if the command specifies `n/NAME p/PHONE_NUMBER`, `p/PHONE_NUMBER n/NAME` is also acceptable.
 
 * Extraneous arguments for commands that do not take in parameters (such as `help`, `list`, `exit` and `clear`) will be ignored.<br>
@@ -131,7 +134,7 @@ If you are referring to a PDF version of this document, be careful when copying 
 
 ### Viewing help : `help`
 
-Shows a message containing current available commands and provides a description on how to get more help.
+Shows a scrollable message containing current available commands and provides a description on how to get more help.
 
 Format: `help`
 
@@ -180,8 +183,8 @@ Format: `list`
 
 :bulb: **Tip:**
 `list` is handy in these cases:
-* **Resetting after a filtered view:** If you have just used the [`find`](#locating-persons-by-tag) command (or any other command) that shows a _subset_ of your contacts, `list` will bring back the _full set_ of all contacts. 
-* **Verifying updates:** After adding, editing, or removing multiple persons, running `list` ensures that any unexpected filters or sorting are cleared, so you see the entire, up-to-date list at once. 
+* **Resetting after a filtered view:** If you have just used the [`find`](#locating-persons-by-tag) command (or any other command) that shows a _subset_ of your contacts, `list` will bring back the _full set_ of all contacts.
+* **Verifying updates:** After adding, editing, or removing multiple persons, running `list` ensures that any unexpected filters or sorting are cleared, so you see the entire, up-to-date list at once.
 * **Navigating from another feature:** In some (proposed) workflows, you might be reviewing transaction records or other data. Using `list` ensures you return to the complete contact view without any lingering search results or partial views.
 </div>
 
@@ -198,7 +201,7 @@ Format: `edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [r/REMARK [by/TIME]
 * When editing tags, the existing tags of the person will be removed i.e adding of tags is not cumulative.
 * You can remove all the person’s tags by typing `t/` without specifying any tags after it.
 * Similarly, you can remove the person's remark field by typing `r/` with no description or timestamp.
-* However, empty remarks with timestamp such as `r/ by/2025-03-30 16:00` are not accepted.  
+* However, empty remarks with timestamp such as `r/ by/2025-03-30 16:00` are not accepted.
 * For the optional fields of company, job, stock platform and networth, you can remove the existing value by typing their prefix followed with `delete`.
 
 Examples:
@@ -221,29 +224,23 @@ To add deadlines to remarks, the by/ argument must be supplied right after r/.
 The edit command requires `r/REMARKS by/TIME` if you wish to add a deadline. `by/TIME r/REMARKS` is not acceptable. Similarly, there should not any other arguments between these two.
 </div>
 
-### Locating persons by tag : `find`
-
-Finds persons whose tags contain any of the given tags.
-
-Format: `find TAG_NAME`
-
 ### Locating persons by name : `find`
 
 Finds persons whose names contain any of the given keywords.
 
 Format: `find KEYWORD [MORE_KEYWORDS]`
 
-* The search is case-insensitive. e.g `hans` will match `Hans`
-* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`
+* The search is case-insensitive. e.g `hans` will match `Hans`.
+* The order of the keywords does not matter. e.g. `Hans Bo` will match `Bo Hans`.
 * Only the name is searched.
-* Only full words will be matched e.g. `Han` will not match `Hans`
+* Only full words will be matched e.g. `Han` will not match `Hans`.
 * Persons matching at least one keyword will be returned (i.e. `OR` search).
-  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`
-* Use `list` to see all contacts again
+  e.g. `Hans Bo` will return `Hans Gruber`, `Bo Yang`.
+* Use `list` to see all contacts again.
 
 Examples:
-* `find John` returns `john` and `John Doe`
-* `find alex david` returns `Alex Yeoh`, `David Li`<br>
+* `find John` returns `john` and `John Doe`.
+* `find alex david` returns `Alex Yeoh`, `David Li`.<br>
 
 <figure>
   <img src="images/find_alex_david.png" alt="result for 'find alex david'" width="600px">
@@ -314,7 +311,7 @@ Format: `order INDEX [o/TYPE am/AMOUNT at/PRICE]`
 
 Examples:
 * `order 1` records an empty order for the person listed at index 1.
-* `order 1 o/buy am/10 at/9.50` records a buy order of 5 units at $5.50 for the person listed at index 1.
+* `order 1 o/buy am/10 at/9.50` records a buy order of 10 units at $9.50 for the person listed at index 1.
 * `order 1 o/sell am/10 at/10.50` records a sell order of 10 units at $10.50 for the person listed at index 1.
 
 <div markdown="span" class="alert alert-info">
@@ -325,20 +322,20 @@ Since FinClient is designed for a single financial instrument, every order recor
 
 ### Sorting contacts : `sort`
 
-Sorts the contact list based on the criteria of name or phone number.
+Sorts the contact list based on a set of certain criterias.
 
 Format: `sort CRITERIA`
 
 Examples:
-* `sort name` sorts the contact list in FinClient based on contact's name
-* `sort networth` sorts the contact list in FinClient based on contact's networth bracket
+* `sort name` sorts the contact list in FinClient based on contact's name.
+* `sort networth` sorts the contact list in FinClient based on contact's networth bracket.
 
 Current available criteria are:
-* `name` : Sorts the contact list based on contact's name
-* `networth` : Sorts the contact list based on contact's net worth bracket
-* `amount` : Sorts the contact list based on contact's order amount
-* `price` : Sorts the contact list based on contact's order price
-* `deadline`: Sorts the contact list based on contact's deadline
+* `name` : Sorts the contact list based on contact's name.
+* `networth` : Sorts the contact list based on contact's net worth bracket.
+* `amount` : Sorts the contact list based on contact's order amount.
+* `price` : Sorts the contact list based on contact's order price.
+* `deadline`: Sorts the contact list based on contact's deadline.
 
 ### Clearing all entries : `clear`
 
@@ -377,10 +374,10 @@ Furthermore, certain edits can cause FinClient to behave in unexpected ways (e.g
 
 --------------------------------------------------------------------------------------------------------------------
 
-## <span id="faq">FAQ</span>
+## FAQ
 
 <!-- FAQ: General Usage -->
-### <span id="general-usage" style="font-size: smaller;">General Usage</span>
+### General Usage
 <details>
   <summary>What is FinClient, and who is it for?</summary>
   <p><em>FinClient is a CLI-based contact management tool designed for financial advisors who prefer typing over using a GUI. It helps manage client records, preferences, financial details, and more.</em></p>
@@ -395,12 +392,12 @@ Furthermore, certain edits can cause FinClient to behave in unexpected ways (e.g
 </details>
 <details>
   <summary>How do I update FinClient to the latest version?</summary>
-  <p><em>Simply download the latest .jar file from the official source and replace your existing one.</em></p>
+  <p><em>Simply download the latest .jar file from the <a href="https://github.com/AY2425S2-CS2103T-T11-4/tp/releases">official source</a> and replace your existing one.</em></p>
 </details>
 <br>
 
 <!-- FAQ: Commands & Features -->
-### <span id="commands-and-features" style="font-size: smaller;">Commands and Features</span>
+### Commands and Features
 <details>
   <summary>Can I undo an action in FinClient?</summary>
   <p><em>Currently, there is no undo command, so be careful when making changes. However, you can back up your data before making major edits.</em></p>
@@ -408,8 +405,7 @@ Furthermore, certain edits can cause FinClient to behave in unexpected ways (e.g
 <details>
   <summary>How can I search for a client?</summary>
   <p><em>You can use:<br>
-  <code>find NAME</code> to search by name, or<br>
-  <code>find TAG</code> to search by a specific tag.</em></p>
+  <code>find NAME</code> to search by name<br></em></p>
 </details>
 <details>
   <summary>What happens if I try to add a duplicate contact?</summary>
@@ -430,7 +426,7 @@ Furthermore, certain edits can cause FinClient to behave in unexpected ways (e.g
 <br>
 
 <!-- FAQ: Data Management -->
-### <span id="data-management" style="font-size: smaller;">Data Management</span>
+### Data Management
 <details>
   <summary>Where is my data stored?</summary>
   <p><em>Your data is saved in a file in the same directory as finclient.jar.</em></p>
@@ -454,7 +450,7 @@ Furthermore, certain edits can cause FinClient to behave in unexpected ways (e.g
 <br>
 
 <!-- FAQ: Troubleshooting -->
-### <span id="trouble-shooting" style="font-size: smaller;">Trouble Shooting</span>
+### Trouble Shooting
 <details>
   <summary>I get an error when trying to start FinClient. What should I do?</summary>
   <p><em>Ensure you have Java 17 or above installed.<br>
@@ -479,11 +475,11 @@ Furthermore, certain edits can cause FinClient to behave in unexpected ways (e.g
 ## <span id="command-summary">Command summary</span>
 
 Action | Format | Example
----|---|---
-**Add** | `add n/NAME p/PHONE_NUMBER [p/PHONE_NUMBER]… e/EMAIL a/ADDRESS [r/REMARK] [t/TAG]…​ [c/COMPANY] [j/job] [s/STOCKPLATFORM] [$/NETWORTH]` | `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague c/Engineer`
+---|--------|---
+**Add** | `add n/NAME p/PHONE_NUMBER [p/PHONE_NUMBER]… e/EMAIL a/ADDRESS [r/REMARK [by/]] [t/TAG]…​ [c/COMPANY] [j/job] [s/STOCKPLATFORM] [$/NETWORTH]` | `add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague c/Engineer`
 **Clear** | `clear` | `clear`
 **Delete** | `delete INDEX` | `delete 3`
-**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [r/REMARK] [t/TAG]… [c/COMPANY] [j/job] [s/STOCKPLATFORM] [$/NETWORTH]` | `edit 2 n/James Lee e/jameslee@example.com`
+**Edit** | `edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [r/REMARK [by/]] [t/TAG]… [c/COMPANY] [j/job] [s/STOCKPLATFORM] [$/NETWORTH]` | `edit 2 n/James Lee e/jameslee@example.com`
 **Find** | `find KEYWORD [MORE_KEYWORDS]` | `find James Jake`
 **Hide** | `hide all` or `hide INDEX` or `hide name` | `hide 2`
 **Reveal** | `reveal all` or `reveal INDEX` or `reveal name` | `reveal 2`
